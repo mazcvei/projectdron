@@ -39,7 +39,7 @@ class ContactController extends Controller
 
         Resend::emails()->send([
             'from'      => 'ProjectDron <contacto@resend.dev>',
-            'to'        => 'mario.azcvei@hotmail.com', //rferfer76@gmail.com
+            'to'        => 'rferfer76@gmail.com',
             'subject'   => 'Solicitud de contacto',
             'html'      => $view,
         ]);
@@ -56,5 +56,11 @@ class ContactController extends Controller
     {
         $contacts = Contact::all();
         return view('contacts.index', compact('contacts'));
+    }
+    public function destroy(Contact $Contact)
+    {
+        $Contact->delete();
+        return redirect()->route('contact.index')->with('success', 'Contacto eliminado correctamente.');
+
     }
 }

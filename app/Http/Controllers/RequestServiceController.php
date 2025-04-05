@@ -75,5 +75,7 @@ class RequestServiceController extends Controller
     public function destroy(RequestService $RequestService)
     {
         $RequestService->delete();
+        return redirect()->route('request.index')->with('success', 'Peticion de servicio eliminado correctamente.');
+
     }
 }

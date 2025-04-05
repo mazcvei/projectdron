@@ -44,10 +44,9 @@
                     <td>{{ $request->service_type->title }}</td>
                     <td>{{ $request->crop_type->name }}</td>
                     <td>
-                        <form action="{{ route('crop.destroy', $request->id) }}" method="POST" style="display:inline">
-                            @csrf
-                            <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('¿Estás seguro?')">Eliminar</button>
-                        </form>
+        
+                        <a href="{{route('request.destroy',$request->id)}}" class="btn btn-sm btn-danger" onclick="return confirm('¿Estás seguro?')">Eliminar</a>
+                        
                     </td>
                 </tr>
             @endforeach

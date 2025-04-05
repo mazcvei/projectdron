@@ -69,6 +69,7 @@ Route::middleware('auth')->group(function () {
     Route::post(uri: '/eliminar-dron/{Dron}', action: [DronController::class, 'destroy'])->name('drones.destroy');
 
     Route::get('/peticiones-servicio', [RequestServiceController::class, 'index'])->name('request.index');
+    Route::get('/eliminar-peticiones-servicio/{RequestService}', [RequestServiceController::class, 'destroy'])->name('request.destroy');
 
 
 });
